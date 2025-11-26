@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRESENTEC | Panel de Asistencia</title>
+  <style>
+    :root {
+      --color-primary: #004a99;
+      --color-accent: #28a745;
+      --color-background: #f3f7fb;
+      --color-danger: #dc3545;
+      --color-warning: #ffc107;
+      --color-shadow: rgba(0, 0, 0, 0.12);
+      --radius: 12px;
+      --transition: all 0.25s ease;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--color-background);
+      margin: 0;
+      padding: 30px;
+    }
+      
+      <body style="
+  background-image: url('padrelisto.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+">
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px var(--color-shadow);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--color-accent);
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: var(--color-primary);
+      margin: 0;
+      font-size: 1.9em;
+    }
+
+    .logo-title {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      color: var(--color-accent);
+      letter-spacing: 1px;
+      margin-right: 12px;
+    }
+
+    .btn-logout {
+      background: linear-gradient(135deg, #ff4b2b, #dc3545);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-logout:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .section-box {
+      background-color: #fff;
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #e0e0e0;
+      transition: var(--transition);
+    }
+
+    .section-box:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .section-box h3 {
+      color: var(--color-primary);
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    #btn-contact-mail {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    #btn-contact-mail:hover { transform: scale(1.02); }
+
+    #btn-contact-wp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+    }
+
+    #btn-contact-wp:hover { transform: scale(1.02); }
+
+    #btn-upload {
+      background: linear-gradient(135deg, #ffc107, #ffcd38);
+      color: #333;
+      font-weight: 600;
+    }
+
+    #btn-upload:hover { transform: scale(1.02); }
+
+    .upload-input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    .upload-input:focus {
+      border-color: var(--color-primary);
+      outline: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: var(--color-primary);
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.85em;
+    }
+
+    tr:nth-child(even) { background-color: #f8f9fa; }
+
+    .status-presente { color: var(--color-accent); font-weight: 700; }
+    .status-tarde { color: var(--color-warning); font-weight: 700; }
+    .status-ausente { color: var(--color-danger); font-weight: 700; }
+
+    .student-profile {
+      background: linear-gradient(135deg, #e9f5ff, #f8fcff);
+      border-left: 6px solid var(--color-primary);
+      padding: 20px 30px;
+      border-radius: var(--radius);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    footer {
+      border-top: 1px solid #ccc;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .alerta {
+      padding: 12px 15px;
+      background: #eaf4ff;
+      border-left: 5px solid var(--color-primary);
+      border-radius: 8px;
+      color: #004a99;
+      margin-top: 10px;
+    }
+
+    .colegio-msg {
+      background: #fff8e1;
+      border-left: 5px solid #ffb300;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display: flex; align-items: center;">
+        <span class="logo-title">PRESENTEC</span>
+        <h1 id="page-title">Panel de Asistencia</h1>
+      </div>
+      <a href="pagina_padre.html" class="btn-logout">Cerrar sesión</a>
+    </header>
+
+    <div class="section-box">
+      <h3>🚨 Centro de Notificaciones</h3>
+      <ul id="notification-area">
+        <li class="alerta">📢 Recuerde justificar las ausencias dentro de las 48 hs.</li>
+        <li class="alerta">🎓 Reunión de padres programada para el 30/10 a las 18:00 hs.</li>
+      </ul>
+    </div>
+
+    <div class="quick-actions" style="display: flex; gap: 25px;">
+      <div class="action-box" style="flex-grow: 1.5;">
+        <h4>📬 Comunicación con Preceptor</h4>
+        <p style="font-size: 0.9em; color: #555;">Puede enviar un correo o mensaje directo para informar justificativos o consultas.</p>
+        <a href="mailto:juanma@gmail.com?subject=Justificativo%20de%20[Alumno]" id="btn-contact-mail" class="btn-action">
+          ✉️ Enviar Correo al Preceptor
+        </a>
+        <a href="https://wa.me/5491155554444?text=Hola%20Preceptor,%20le%20env%C3%ADo%20mi%20justificativo" 
+           id="btn-contact-wp" class="btn-action">
+          💬 Enviar WhatsApp
+        </a>
+
+        <div class="alerta" style="margin-top:12px;">
+          <strong>Preceptor:</strong> Juan Manuel Rodríguez<br>
+          <strong>Correos:</strong> <a href="mailto: nancy.gimenez@tecnica29de6.edu.ar       renzo.morales@tecnica29de6.edu.ar    mica.perez@tecnica29de6.edu.ar"> renzo.morales@tecnica29de6.edu.ar, mica.perez@tecnica29de6.edu.ar, nancy.gimenez@tecnica29de6.edu.ar  </a><br>
+          <strong>Horario de atención:</strong> Lunes a Viernes, 13:00 a 17:00 hs
+        </div>
+      </div>
+
+      <div class="action-box" style="flex-grow: 1;">
+        <h4>📎 Subir Justificativo Médico</h4>
+        <p style="font-size: 0.9em; color: #555;">Adjunte su archivo (PDF, JPG o PNG) y el sistema lo enviará al preceptor.</p>
+        <form action="subir_justificativo.php" method="POST" enctype="multipart/form-data">
+          <input type="file" name="justificativo" accept=".pdf, .jpg, .png" class="upload-input" required>
+          <button type="submit" id="btn-upload" class="btn-action">Subir Archivo</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="grid-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+      <div class="section-box student-profile">
+        <h3>👩‍🎓 Información del Alumno</h3>
+        <div class="info-grid">
+          <p><strong>Alumno/a:</strong> Julieta López</p>
+          <p><strong>Curso:</strong> 6to 5ta</p>
+          <p><strong>Turno:</strong> Tarde</p>
+          <p><strong>Padre/Tutor:</strong> Ricardo López</p>
+          <p><strong>Última Consulta:</strong> 27/10/2025 - 08:20 hs</p>
+        </div>
+        <div class="alerta">📊 Estado general: Buen rendimiento. Solo 2 inasistencias sin justificar.</div>
+      </div>
+
+      <div class="section-box">
+        <h3>📊 Resumen de Asistencia</h3>
+        <div style="display:flex; justify-content:space-around; text-align:center;">
+          <div><strong style="color:var(--color-accent); font-size:1.8em;">15</strong><div>Presente</div></div>
+          <div><strong style="color:var(--color-warning); font-size:1.8em;">3</strong><div>Tarde</div></div>
+          <div><strong style="color:var(--color-danger); font-size:1.8em;">2</strong><div>Ausente</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔽 Sección de Filtros y Materias -->
+    <h2>🎓 Registro Detallado y Filtros</h2>
+    <div class="filters">
+      <label>Filtrar por Fecha:</label>
+      <input type="date" id="filter-date">
+
+      <label>Filtrar por Asignatura:</label>
+      <select id="filter-subject">
+        <option value="all">Todas</option>
+        <option value="programacion">Programación</option>
+        <option value="hardware">Laboratorio de Hardware</option>
+        <option value="matematica">Matemática</option>
+        <option value="edfisica">Educación Física</option>
+      </select>
+      <button>Aplicar Filtro</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Asignatura / Módulo</th>
+          <th>Estado Final</th>
+          <th>Justificativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10/10/2025</td>
+          <td>Programación</td>
+          <td class="status-presente">Presente</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>13/10/2025</td>
+          <td>Matemática</td>
+          <td class="status-ausente">Ausente</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>15/10/2025</td>
+          <td>Educación Física</td>
+          <td class="status-tarde">Tarde</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 🏫 Sección de mensajes institucionales -->
+    <div class="section-box colegio-msg">
+      <h3>🏫 Mensajes del Colegio</h3>
+      <p>📅 Recordamos que el 31 de octubre no habrá clases por jornada institucional.</p>
+      <p>📘 Las libretas digitales estarán disponibles a partir del 5 de noviembre.</p>
+    </div>
+
+    <footer>
+      <p><strong>PRESENTEC</strong> © 2025 | Sistema de Asistencia - 6to 5ta TT</p>
+      <p>Contacto: <a href="mailto:mica.perez@tecnica29de6.edu.ar">mica.perez@tecnica29de6.edu.ar   renzo.morales@tecnica29de6.edu.ar   nancy.gimenez@tecnica29de6.edu.ar
+ </a> | Tel: (011) 4567-8900</p>
+    </footer>
+  </div>
+</body>
+</html>
