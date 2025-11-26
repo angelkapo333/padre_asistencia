@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESENTEC | Acceso de Padres</title>
+    <style>
+        :root {
+            --color-primary: #004a99;
+            --color-accent: #28aa55;
+            --color-shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+
+            /* 🔥 Fondo con imagen */
+            background-image: url('padre.jpg');
+            background-size: cover;        /* La imagen cubre toda la pantalla */
+            background-position: center;   /* Centrada */
+            background-repeat: no-repeat;  /* No se repite */
+            background-attachment: fixed;  /* Efecto parallax */
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #ffffffdd; /* un poco transparente */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px var(--color-shadow);
+            border-top: 5px solid var(--color-primary);
+            backdrop-filter: blur(6px); /* efecto vidrio */
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            color: var(--color-primary);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95em;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .btn-submit:hover {
+            background-color: #1f8a44;
+        }
+
+        .footer-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .footer-link a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">PRESENTEC</div>
+        <p class="subtitle">Ingrese los datos de su hijo/a para acceder al Panel de Asistencia</p>
+
+        <div id="login-form">
+            <div class="form-group">
+                <label for="login-dni">DNI del Alumno/a:</label>
+                <input type="text" id="login-dni" placeholder="Ej: 45123456" required>
+            </div>
+            <div class="form-group">
+                <label for="login-curso">Curso:</label>
+                <select id="login-curso" required>
+                    <option value="" disabled selected>Seleccione el curso</option>
+                    <option value="6to5ta">6to 5ta</option>
+                    <option value="4ta6ta">4ta 6ta</option>
+                    <option value="1ra9na">1ra 9na</option>
+                    <option value="otro">Otro Curso</option>
+                </select>
+            </div>
+
+            <button onclick="window.location.href='justificativo_padre.html'" class="btn-submit">Acceder</button>
+        </div>
+
+        <div class="footer-link">
+            <a href="#">¿Problemas para acceder?</a>
+        </div>
+    </div>
+</body>
+</html>
